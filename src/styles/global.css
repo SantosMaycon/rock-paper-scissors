@@ -13,7 +13,6 @@ img {
 }
 
 body {
-  margin: 0px;
   padding: 4rem 2rem;
   box-sizing: border-box;
   background: radial-gradient(#1f3756, #141539);
@@ -146,6 +145,92 @@ body {
   color: #a1223e;
 }
 
+/* Rules */
+
+.rules {
+  padding-bottom: 6rem;
+}
+
+.button-rules {
+  border-radius: 8px;
+  border: 1px solid rgb(255, 255, 255);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  cursor: pointer;
+  padding: 1.1rem 3.7rem;
+  background: transparent;
+  position: absolute;
+  right: 8rem;
+  outline: none;
+}
+
+.button-rules:hover,
+.button-rules:focus {
+  background: #fff;
+  color: #141539;
+  border-color: #141539;
+  outline: none;
+}
+
+.rules-info {
+  overflow-y: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+
+.openModal {
+  display: flex;
+  transition: all 8s ease-in-out;
+}
+
+.closeModal {
+  display: none;
+}
+
+.info {
+  margin: auto;
+  width: 30rem;
+  height: 40rem;
+  border-radius: 0.8rem;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem;
+  background-image: url(../../images/image-rules.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.info-title {
+  text-transform: uppercase;
+  font-size: 3.2rem;
+  line-height: 1;
+  color: #1f3756;
+}
+
+.button-close {
+  width: 4rem;
+  height: 4rem;
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.button-close:hover svg * {
+  fill: #141539;
+  opacity: 1;
+}
+
 /* Responsive */
 @media (max-width: 398px) {
   .heading img {
@@ -190,6 +275,34 @@ body {
   .scissors,
   .rock {
     background-size: 3.5rem;
+  }
+
+  /* --------------------------- */
+
+  .rules {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 4rem;
+  }
+
+  .button-rules {
+    position: initial;
+    margin: 0 auto;
+  }
+
+  /* --------------------------- */
+
+  .info {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8rem;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem;
+    background-image: url(../../images/image-rules.svg);
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
