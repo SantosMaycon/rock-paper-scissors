@@ -167,9 +167,10 @@ body {
 
 /* Rules */
 
-/* .rules {
-  padding-bottom: 6rem;
-} */
+.rules {
+  position: relative;
+  margin: 5rem 0;
+}
 
 .button-rules {
   border-radius: 8px;
@@ -184,7 +185,7 @@ body {
   background: transparent;
   position: absolute;
   right: 5rem;
-  bottom: 4rem;
+  bottom: 0rem;
   outline: none;
   transition: all 1s ease-in-out;
 }
@@ -333,9 +334,9 @@ body {
 /* Responsive */
 
 @media (max-width: 780px) {
-  .button-rules {
-    bottom: 2rem;
-  }
+  /* .button-rules {
+    bottom: 0rem;
+  } */
 
   .battle {
     margin: 4rem auto 1.5rem auto;
