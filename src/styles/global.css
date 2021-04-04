@@ -183,9 +183,9 @@ body {
   cursor: pointer;
   padding: 1.1rem 3.7rem;
   background: transparent;
-  position: absolute;
+  position: fixed;
   right: 5rem;
-  bottom: 0rem;
+  bottom: 2rem;
   outline: none;
   transition: all 1s ease-in-out;
 }
@@ -300,6 +300,7 @@ body {
 }
 
 .result-title {
+  text-align: center;
   font-size: 5.6rem;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -352,6 +353,7 @@ body {
 
   .you {
     order: 1;
+    margin-right: 40px;
   }
   .computer {
     order: 2;
