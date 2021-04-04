@@ -26,6 +26,8 @@ function execut() {
   const pick = document.querySelector(".pick");
   const battlePlayer = document.querySelector(".battle-player");
 
+  const score = document.querySelector(".scoreNumber");
+
   let playAgain;
 
   function picked(hand) {
@@ -65,24 +67,55 @@ function execut() {
       messageGame = "You Loser";
     }
 
-    battlePlayer.innerHTML = `
-    <div class="button-pick-big ${myHand} you">
-        <div class="background-linear-big ${myHand}-color"></div>
-    </div>
-    <div class="result">
-      <h1 class="result-title">${messageGame}</h1>
-      <button class="button-play">Play Again</button>
-    </div>
-    <div class="button-pick-big ${computerHand} computer">
-        <div class="background-linear-big ${computerHand}-color"></div>
-    </div>
-  `;
+    let youPick = `
+      <div class="button-pick-big ${myHand} you">
+          <div class="background-linear-big ${myHand}-color"></div>
+      </div>
+    `;
 
-    playAgain = document.querySelector(".button-play");
-    playAgain.addEventListener("click", () => {
-      battle.className = "close";
-      pick.className = "pick";
-    });
+    let computerPick = `
+      <div class="button-pick-big ${computerHand} computer">
+        <div class="background-linear-big ${computerHand}-color"></div>
+      </div>
+    `;
+
+    let messageGameResult = `
+      <div class="result">
+        <h1 class="result-title">${messageGame}</h1>
+        <button class="button-play">Play Again</button>
+      </div>
+    `;
+
+    battlePlayer.innerHTML = youPick;
+
+    setTimeout(() => {
+      battlePlayer.innerHTML = `
+        ${youPick}
+        ${computerPick}        
+      `;
+    }, 2000);
+
+    setTimeout(() => {
+      battlePlayer.innerHTML = `
+        ${youPick}
+        ${messageGameResult}
+        ${computerPick}
+      `;
+
+      if (messageGame == "You Win") {
+        score.innerText = +score.innerText + 1;
+      } else if (messageGame == "You Loser") {
+        if (Number(score.innerText) > 0) {
+          score.innerText = +score.innerText - 1;
+        }
+      }
+
+      playAgain = document.querySelector(".button-play");
+      playAgain.addEventListener("click", () => {
+        battle.className = "close";
+        pick.className = "pick";
+      });
+    }, 3000);
   }
 
   paper.addEventListener("click", () => {
